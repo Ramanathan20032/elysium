@@ -1,0 +1,831 @@
+.video-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 0;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(1deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: #F5F1DA;
+}
+
+.restaurant-name {
+    font-family: "Jost", sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 0.27em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px #F5F1DA;
+    text-stroke: 2px #F5F1DA;
+    text-shadow: none;
+}
+
+.tagline {
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: #FED659;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    font-family: "Jost", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    min-width: 160px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FED659 0%, #BE8011 100%);
+    color: #141414;
+    /* box-shadow: 0 4px 15px rgba(254, 214, 89, 0.3); */
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #BE8011 0%, #FED659 100%);
+    color: #141414;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #F5F1DA;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #FED659;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(135deg, #FED659 0%, #BE8011 100%);
+    color: #141414;
+    border-color: transparent;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .restaurant-name {
+        font-size: 4rem;
+        letter-spacing: 0.15em;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        min-width: 140px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .video-container {
+        height: 95vh;
+    }
+
+    .restaurant-name {
+        font-size: 3.2rem;
+        letter-spacing: 0.1em;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+        margin-top: 1rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        min-width: 120px;
+    }
+}
+
+/* ================================================================ */
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    background: #141414;
+    color: #F5F1DA;
+}
+
+.about-content {
+    padding-right: 30px;
+    text-align: left;
+}
+
+.about-heading {
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #F5F1DA;
+}
+
+.about-subheading {
+    font-family: "Jost", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #FED659;
+}
+
+.about-para {
+    font-family: "Jost", sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #F5F1DA;
+    /* opacity: 1; */
+}
+
+.about-image {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+.image-background {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 25px;
+    bottom: 25px;
+    background: linear-gradient(135deg, rgba(254, 214, 89, 0.3) 0%, rgba(190, 128, 17, 0.2) 50%, rgba(254, 214, 89, 0.1) 100%);
+    border-radius: 20px;
+    z-index: 0;
+    filter: blur(15px);
+    opacity: 0.4;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* About Section Responsive */
+@media screen and (max-width: 992px) {
+    .about-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .about-heading {
+        font-size: 1.8rem;
+    }
+
+    .about-subheading {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-heading {
+        font-size: 1.8rem;
+    }
+
+    .about-subheading {
+        font-size: 1.2rem;
+    }
+
+    .about-para {
+        font-size: 1rem;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .about-section {
+        padding: 40px 0;
+    }
+
+    .about-heading {
+        font-size: 1.5rem;
+    }
+
+    .about-subheading {
+        font-size: 1.1rem;
+    }
+
+    .about-para {
+        font-size: 0.95rem;
+    }
+
+    .about-image img {
+        height: 250px;
+    }
+}
+
+/* ================================================================ */
+/* Event Section */
+.event-section {
+    padding: 80px 0;
+    background: #000000;
+    color: #F5F1DA;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-content {
+    text-align: center;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.event-heading {
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #F5F1DA;
+}
+
+.event-subheading {
+    font-family: "Jost", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #FED659;
+}
+
+.event-para {
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #F5F1DA;
+    /* opacity: 1; */
+}
+
+/* Event Section Responsive */
+@media screen and (max-width: 768px) {
+    .event-content {
+        max-width: 95%;
+    }
+
+    .event-section {
+        padding: 60px 0;
+    }
+
+    .event-heading {
+        font-size: 2rem;
+    }
+
+    .event-subheading {
+        font-size: 1.5rem;
+    }
+
+    .event-para {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .event-content {
+        max-width: 100% !important;
+    }
+
+    .event-section {
+        padding: 40px 0;
+    }
+
+    .event-heading {
+        font-size: 1.5rem;
+    }
+
+    .event-subheading {
+        font-size: 1.3rem;
+    }
+
+    .event-para {
+        font-size: 0.95rem;
+    }
+}
+
+/* ================================================================ */
+/* Menu Section */
+.menu-section {
+    padding: 80px 0;
+    background: #000000;
+    color: #F5F1DA;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-content {
+    text-align: center;
+    max-width: 85%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.menu-heading {
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #F5F1DA;
+}
+
+.menu-subheading {
+    font-family: "Jost", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #FED659;
+}
+
+
+.big,
+.small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    aspect-ratio: 2 / 1;
+    border-radius: 20px !important;
+    cursor: pointer;
+    position: relative;
+    isolation: isolate;
+}
+
+.big::after,
+.small::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    opacity: 0.4;
+    transition: background 0.3s ease-in-out;
+    border-radius: 20px !important;
+}
+
+.big:hover::after,
+.small:hover::after {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.big:hover .icon,
+.small:hover .icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.big img,
+.small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+}
+
+.big:hover img,
+.small:hover img {
+    transform: scale(1.01);
+}
+
+/* Menu Overlay Styles */
+.menu-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(310deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    border-radius: 20px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.big:hover .menu-overlay,
+.small:hover .menu-overlay {
+    bottom: 0;
+    opacity: 1;
+}
+
+.menu-overlay h4 {
+    color: #FED659;
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 0 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.1s;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.big:hover .menu-overlay h4,
+.small:hover .menu-overlay h4 {
+    transform: translateY(0);
+}
+
+.menu-items-name {
+    font-family: "Jost", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #F5F1DA;
+    opacity: 1;
+}
+
+@media screen and (max-width: 991px) {
+    .menu-content {
+        max-width: 95%;
+    }
+
+    .menu-section {
+        padding: 60px 0;
+    }
+
+    .menu-heading {
+        font-size: 2rem;
+    }
+
+    .menu-subheading {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-content {
+        max-width: 95%;
+    }
+
+    .menu-section {
+        padding: 60px 0;
+    }
+
+    .menu-heading {
+        font-size: 2rem;
+    }
+
+    .menu-subheading {
+        font-size: 1.5rem;
+    }
+
+    .menu-overlay h4 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-content {
+        max-width: 100% !important;
+    }
+
+    .menu-section {
+        padding: 40px 0;
+    }
+
+    .menu-heading {
+        font-size: 1.8rem;
+    }
+
+    .menu-subheading {
+        font-size: 1.3rem;
+    }
+
+    .menu-overlay h4 {
+        font-size: 0.9rem;
+    }
+
+    .menu-items-name {
+        font-size: 0.9rem;
+    }
+}
+
+/* ================================================================ */
+/* Gallery Section */
+.gallery-section {
+    padding: 80px 0;
+    background: #141414;
+    color: #F5F1DA;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-content {
+    text-align: center;
+    max-width: 85%;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+
+.gallery-heading {
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #F5F1DA;
+}
+
+.gallery-subheading {
+    font-family: "Jost", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #FED659;
+    min-height: 50px;
+}
+
+/* Gallery Section Responsive */
+@media screen and (max-width: 991px) {
+    .gallery-content {
+        max-width: 95%;
+    }
+
+    .gallery-section {
+        padding: 60px 0;
+    }
+
+    .gallery-heading {
+        font-size: 2rem;
+    }
+
+    .gallery-subheading {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-content {
+        max-width: 95%;
+    }
+
+    .gallery-section {
+        padding: 60px 0;
+    }
+
+    .gallery-heading {
+        font-size: 2rem;
+    }
+
+    .gallery-subheading {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .gallery-content {
+        max-width: 100% !important;
+    }
+
+    .gallery-section {
+        padding: 40px 0;
+    }
+
+    .gallery-heading {
+        font-size: 1.8rem;
+    }
+
+    .gallery-subheading {
+        font-size: 1.3rem;
+    }
+}
+
+/* ================================================================ */
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: #141414;
+    color: #F5F1DA;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.contact-heading {
+    font-family: "Jost", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+    color: #000000;
+    background: #FFFFFF;
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.social-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 30px;
+    background: linear-gradient(135deg, #FED659 0%, #BE8011 100%);
+    border: 2px solid #FED659;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 280px;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #141414;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.facebook-btn:hover {
+    background: #1877F2;
+    border-color: #1877F2;
+    color: #FFFFFF;
+}
+
+.instagram-btn:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-color: #dc2743;
+    color: #FFFFFF;
+}
+
+.social-icon {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #141414;
+    transition: color 0.3s ease;
+}
+
+.facebook-btn:hover .social-icon {
+    color: #FFFFFF;
+}
+
+.instagram-btn:hover .social-icon {
+    color: #FFFFFF;
+}
+
+.social-text {
+    color: #141414;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.facebook-btn:hover .social-text {
+    color: #FFFFFF;
+}
+
+.instagram-btn:hover .social-text {
+    color: #FFFFFF;
+}
+
+/* Contact Section Responsive */
+
+@media screen and (max-width: 991px) {
+    .contact-heading {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-content {
+        max-width: 95%;
+    }
+
+    .contact-heading {
+        font-size: 1.3rem;
+        padding: 25px 30px;
+        margin-bottom: 2.5rem;
+    }
+
+    .social-buttons {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .social-btn {
+        padding: 15px 25px;
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-heading {
+        font-size: 1rem;
+        padding: 20px 25px;
+        margin-bottom: 2rem;
+    }
+
+    .social-buttons {
+        gap: 15px;
+    }
+
+    .social-btn {
+        padding: 15px 20px;
+        min-width: 100%;
+        justify-content: center;
+    }
+
+    .social-text {
+        font-size: 0.8rem;
+    }
+}
